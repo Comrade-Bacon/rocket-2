@@ -1,0 +1,32 @@
+{
+    "name": "Rocket Remastered 1.1.2",
+    "description": "",
+    "dependencies": {
+        "device": "*",
+        "controller": "*",
+        "sprite-scaling": "*",
+        "pxt-button-combos": "github:jwunderl/pxt-button-combos#v0.0.24",
+        "pxt-status-bar": "github:jwunderl/pxt-status-bar#v0.4.1",
+        "Timers": "github:microsoft/arcade-timers#v1.1.0",
+        "arcade-story": "github:microsoft/arcade-storytelling#v1.0.3",
+        "arcade-text": "github:microsoft/arcade-text#v1.3.0",
+        "settings-blocks": "github:microsoft/pxt-settings-blocks#v1.0.0"
+    },
+    "files": [
+        "main.blocks",
+        "main.ts",
+        "README.md",
+        "assets.json"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "targetVersions": {
+        "target": "1.12.18",
+        "targetId": "arcade"
+    },
+    "supportedTargets": [
+        "arcade"
+    ],
+    "preferredEditor": "tsprj"
+}
