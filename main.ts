@@ -455,10 +455,11 @@ function loadrokt() {
         `],
         200,
         true)
+    }
     controller.moveSprite(Ship) // move the ship with the Player controls
     effects.starField.startScreenEffect() // load the stars in the background
     Ship.setStayInScreen(true) // force the ship to stay in the screen
-}
+
 }
 
 
