@@ -110,7 +110,9 @@ if (!(blockSettings.exists('fSidePause'))) {
 
 
 
-
+function testfunction(){
+    console.log('hi!')
+}
 
 //on touched functions
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite: Sprite, otherSprite: Sprite) {
