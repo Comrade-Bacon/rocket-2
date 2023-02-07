@@ -34,7 +34,7 @@ let asteroid: Sprite = null
 let verstion: any = null // variable for the verstion number in the bottom
 let vertionNumber: string = '1.1.2' // variable to cnage the verstion in only one place compleatly for my convinece while codeing 
 let godmodetext: any = null
-
+let astronot: Sprite = null
 
 
 
@@ -625,6 +625,31 @@ function lvl3 (lodrkt: boolean) {
   pause(300)
     advLvlSetUp(90, 100, 2000, 10, false, false, 3, -50, -85, 160, false, true, false)
 
+lvl4()
+
+
+
+
+}
+
+
+// load level 4
+function lvl4 () {
+    if (!(Ship)) {loadrokt()}
+    Ship.setStayInScreen(false)
+    Ship.setPosition(85,0)
+    controller.moveSprite(Ship,0,0)
+    effects.starField.endScreenEffect()
+    scene.setBackgroundImage(assets.image`marsBackground`)
+    story.spriteMoveToLocation(Ship, 80, 80, 50)
+
+    animation.runImageAnimation(Ship, [assets.image`Defalt Ship`], 50, false)
+    pause(200)
+    story.spriteSayText(Ship,'Wow! We are on Mars!')
+    pause(200)
+    story.spriteSayText(Ship,'We need to refuel!')
+    astronot = sprites.create(img``)
+    
 }
 
 
@@ -1589,6 +1614,8 @@ function menue () {
         `)
             bgnGame()
         }
+
+        // skip to level
     } else if (story.getLastAnswer() == "Skip to level") {
         let lvlSkp = game.askForNumber("Enter level number. To go back enter 0.", 2)
         
@@ -1599,6 +1626,10 @@ function menue () {
             lvl2(true)
         } else if (lvlSkp == 3) {
             lvl3(true)
+        
+        } else if (lvlSkp == 4) {
+            lvl4()
+        
         } else if (lvlSkp == 0 || lvlSkp == 0o0) {
             game.reset()
         } else {
@@ -1809,9 +1840,6 @@ function advFreePlay() {
         advFreePlay()
     }
 }
-
-
-
 
 
 
