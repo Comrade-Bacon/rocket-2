@@ -1,5 +1,5 @@
 {
-    "name": "Rocket Remastered 1.1.2",
+    "name": "Rocket 2 V1.2",
     "version": "1.0.0",
     "description": "",
     "dependencies": {
@@ -11,7 +11,8 @@
         "Timers": "github:microsoft/arcade-timers#v1.1.0",
         "arcade-story": "github:microsoft/arcade-storytelling#v1.0.3",
         "arcade-text": "github:microsoft/arcade-text#v1.3.0",
-        "settings-blocks": "github:microsoft/pxt-settings-blocks#v1.0.0"
+        "settings-blocks": "github:microsoft/pxt-settings-blocks#v1.0.0",
+        "Color Fading": "github:jwunderl/pxt-color#v0.2.2"
     },
     "files": [
         "main.blocks",
@@ -19,7 +20,9 @@
         "README.md",
         "assets.json",
         "images.g.jres",
-        "images.g.ts"
+        "images.g.ts",
+        "tilemap.g.jres",
+        "tilemap.g.ts"
     ],
     "testFiles": [
         "test.ts"
