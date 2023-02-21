@@ -690,7 +690,10 @@ function lvl4 () {
 
        
         statusbars.onStatusReached(StatusBarKind.Energy, statusbars.StatusComparison.EQ, statusbars.ComparisonType.Percentage, 100, function (status) {
-            pause(500)
+            
+            timer.after(500, function() {
+                
+            
             fuelbar.destroy()
             story.spriteSayText(astronot, 'We found all the fuel!')
             story.spriteSayText(astronot, 'Return to the ship!')
@@ -1031,7 +1034,7 @@ function lvl4 () {
         `],
                     200,
                     true)
-
+                    scene.cameraShake(4, 2000)
                     story.spriteMoveToLocation(Ship,85, -25, 80)
                     Ship.destroy()
 
@@ -1040,6 +1043,7 @@ function lvl4 () {
 
             color.setPalette(color.originalPalette)
             game.over(true)
+            })
         })
 
 
@@ -1191,19 +1195,24 @@ function menue () {
         if (story.getLastAnswer() == "Show verstion") {
             story.showPlayerChoices("true", "false", 'Back')
             if (story.getLastAnswer() == "Back") {
+                setings()
             } else if (story.getLastAnswer() == "false"){
                 if (blockSettings.readString("verstion") == "true" || !(blockSettings.exists("verstion"))){
                     blockSettings.writeString("verstion", "false")
                     verstion.destroy()
+                    setings()
                 } else if (blockSettings.readString("verstion") == "false") {
                     blockSettings.writeString("verstion", "false")
+                    setings()
                 }
             } else if (story.getLastAnswer() == "true"){
                 if (blockSettings.readString("verstion") == "true") {
                     blockSettings.writeString("verstion", "true")
+                    setings()
                 } else if (blockSettings.readString("verstion") == "false"){
                     blockSettings.writeString("verstion", "true")
                     verstionSetUp()
+                    setings()
                 }
 
             }
@@ -1221,8 +1230,9 @@ function menue () {
                 settings.writeString('Free play save', 'true')
             }
 
+        } else {
+        menue()
         }
-        setings()
     }
     }
 
@@ -1262,7 +1272,7 @@ function menue () {
         }
 
 
-
+        // play Game
     }
     else if (story.getLastAnswer() == "Play Game") {
         story.showPlayerChoices("Play Cutscene", "Skip Cutscene", "Free play", "Back")
@@ -1442,7 +1452,7 @@ function menue () {
                 ....................
                 ....................
                 ....................
-            `], 1, false)
+            `], 10, true)
 
 
 
